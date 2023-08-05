@@ -1,39 +1,43 @@
 # Simple Docker Webapp
 
+This repository contains a simple Docker web application. Follow the instructions below to build and run the application.
+
 ## Instructions
 
-### To run the docker web application, follow these instructions:
+1. **Build the Docker Image**
 
-- Run the following command in your current working directory of the application:
-
-Build the image with a tag
+   In your terminal, navigate to the directory containing the application. Then, build the Docker image using the following command:
 
 ```bash
   docker build -t name/repository-name:tag
 ```
 
-e.g.
+For example:
 
 ```bash
   docker build -t kobibell/docker-web:latest
 ```
 
-Now run the port mapping with the following command:
+2. **Run the Docker Container**
+
+   Run the Docker container with port mapping using the following command:
 
 ```bash
   docker run -p 8080:8080 kobibell/docker-web
 ```
 
-You can check the port mapping is running by going to your local host in your web browser and go to the following link: http://localhost:8080/
+You can then access the application by navigating to `http://localhost:8080/` in your web browser.
 
-Check all the files is in the /usr/app directory by opening a new terminal and running the following command:
+3. **Check the Files in the Container**
+
+   To verify that all files are in the `/usr/app` directory, open a new terminal and run the following command:
 
 ```bash
 docker exec -it [containerid] sh
 ls
 ```
 
-and you should see the following output:
+You should see the following output:
 
 ```bash
 /usr/app # ls
@@ -43,3 +47,7 @@ Dockerfile         README.md          index.js           node_modules       pack
 ## Author
 
 - [Kobi Bell](https://gitlab.com/kobibell)
+
+## Conclusion
+
+Thank you for checking out this project. If you have any questions or feedback, feel free to open an issue. Happy coding!
